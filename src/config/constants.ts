@@ -1,7 +1,9 @@
 module.exports = {
-     PRODUCT_STATUS: [
-         'In Stock','Low Stock', 'Out Of Stock'
-     ],
+     PRODUCT_STATUS: {
+        IN_STOCK: 'In Stock',
+        LOW_STOCK: 'Low Stock',
+        OUT_OF_STOCK: 'Out Of Stock'
+     },
 
      ROLES: {
         SUPERADMIN: "superadmin",

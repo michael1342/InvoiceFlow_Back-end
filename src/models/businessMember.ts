@@ -7,20 +7,20 @@ const BusinessMemberSchema = new mongoose.Schema({
         ref: 'Business',
         required: true
     },
+    companyName: {
+        type: String
+    },
     name: {
         type: String
     },
     email: {
-        type: String,
-        required: true
+        type: String
     },
     password: {
-        type: String,
-        required: true
+        type: String
     },
     role: {
-        type: String,
-        required: true
+        type: String
     },
     createdAt: {
         type: Date,

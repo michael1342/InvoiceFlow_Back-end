@@ -17,20 +17,20 @@ const Protect = async (req: AppRequest, res: Response, next: NextFunction): Prom
         req.cookies.token = token
         const decoded = jwt.verify(token, process.env.JWT_SECRET)
 
-       const business = await Business.findById(decoded.businessId).select('+passwordChangedAt');
-       const businessMember = await BusinessMember.findById(decoded.businessMemberId).select('+passwordChangedAt');
-       console.log(businessMember)
+       const user = await User.findById(decoded.userId).select('+passwordChangedAt');
+    //    const businessMember = await BusinessMember.findById(decoded.businessMemberId).select('+passwordChangedAt');
+    //    console.log(businessMember)
 
-        if (!business && !businessMember) {
+        if (!user) {
             return next(new Error('business not found'));
         }
 
-        if (business?.status === 'suspended' || businessMember?.status === 'suspended') return next(new Error('account has been deactivated. contact support'));
+        if (user?.status === 'suspended') return next(new Error('account has been deactivated. contact support'));
 
         
 
-        if (business?.changedPasswordAfter(decoded.iat) || businessMember?.changedPasswordAfter(decoded.iat)) return next(new Error('password changed recently'));
-        req.user = business ? business : businessMember
+        if (user?.changedPasswordAfter(decoded.iat)) return next(new Error('password changed recently'));
+        req.user = user
         next();
     } catch (err: any) {
         return next(new Error(err.message));
@@ -46,5 +46,7 @@ const RestrictTo = (...roles: string[]) => (req: AppRequest, res: Response, next
 
 const AdminOnly = RestrictTo(ROLES.ADMIN, ROLES.SUPERADMIN);
 const SuperAdminOnly = RestrictTo(ROLES.SUPERADMIN);
+const InventoryOnly = RestrictTo(ROLES.INVENTORY, ROLES.ADMIN);
+const AccountantOnly = RestrictTo(ROLES.ACCOUNTANT, ROLES.ADMIN);
 
-module.exports = {Protect, AdminOnly, SuperAdminOnly}
+module.exports = {Protect, AdminOnly, SuperAdminOnly, InventoryOnly, AccountantOnly}

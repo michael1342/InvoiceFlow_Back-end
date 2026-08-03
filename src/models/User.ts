@@ -49,9 +49,14 @@ const UserSchema = new mongoose.Schema(
       required: [true, 'Please provide password'],
     },
     companyName: {
-      type: String,
-      required: true,
+      type: String
     },
+
+    businessId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Business'
+    },
+
     role: {
       type: String,
       required: true,
