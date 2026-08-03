@@ -1,0 +1,7 @@
+export const STATUS = {
+        PAID: "PAID",
+        UNPAID: "UNPAID",
+        PARTIALLY_PAID: "PARTIALLY PAID",
+        CANCELLED:"CANCELLED",
+        INITIATED:"INITAIATED"
+}

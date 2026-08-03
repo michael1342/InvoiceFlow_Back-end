@@ -4,7 +4,6 @@
   "description": "Invoice flow",
   "license": "ISC",
   "author": "Michael & Ifeoluwa",
-  "type": "module",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
@@ -16,10 +15,21 @@
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/node": "^26.0.1",
+    "nodemon": "^3.1.14",
+    "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^6.0.3"
   },
   "dependencies": {
-    "express": "^5.2.1"
+    "bcryptjs": "^3.0.3",
+    "country-state-city": "^3.2.1",
+    "crypto": "^1.0.1",
+    "currency-symbol-map": "^5.1.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.8.1",
+    "path": "^0.12.7"
   }
 }

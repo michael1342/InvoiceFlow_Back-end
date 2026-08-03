@@ -1,0 +1,38 @@
+[
+  {
+    "id": "08b1972d-0d40-4296-bf59-3c25dbdb5823",
+    "name": "Michael Anazodo",
+    "email": "michael@stopstressingme.com",
+    "password": "95bfb24de17d285d734b9eaa9109bfe922adc85f20d2e5e66a78bddb4a4ebddb",
+    "business": "Mitsugoshi",
+    "role": "business Owner",
+    "createdAt": "2026-07-02T13:39:20.933Z"
+  },
+  {
+    "id": "4027ea90-b4a4-42da-999e-0a6689887074",
+    "name": "Michael Anazodo",
+    "email": "michael@stopstressingme2.com",
+    "password": "95bfb24de17d285d734b9eaa9109bfe922adc85f20d2e5e66a78bddb4a4ebddb",
+    "business": "Michael Anime World",
+    "role": "business",
+    "createdAt": "2026-07-02T15:17:10.564Z"
+  },
+  {
+    "id": "35b7cdfb-f586-4731-bd83-52246389c5eb",
+    "name": "Michael Anazodo",
+    "email": "michael@stop.com",
+    "password": "95bfb24de17d285d734b9eaa9109bfe922adc85f20d2e5e66a78bddb4a4ebddb",
+    "business": "Michael Anime World",
+    "role": "business",
+    "createdAt": "2026-07-02T15:17:30.874Z"
+  },
+  {
+    "id": "5c032df2-6c7d-418c-b659-0b4669e9fec2",
+    "name": "Michael Anazodo",
+    "email": "shadow212@gmail.com",
+    "password": "95bfb24de17d285d734b9eaa9109bfe922adc85f20d2e5e66a78bddb4a4ebddb",
+    "business": "Michael Anime World",
+    "role": "business",
+    "createdAt": "2026-07-02T15:17:52.974Z"
+  }
+]
