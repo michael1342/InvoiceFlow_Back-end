@@ -93,7 +93,7 @@ BusinessSchema.methods.changedPasswordAfter = function (jwtTimestamp: number) {
 } 
 
 BusinessSchema.set('toJSON', {
-    transform: (_: any, ret: any) => {delete ret.password; return ret;},
+    transform: (_: any, ret: any) => {delete ret.password; return ret;}, 
 })
 
 

@@ -9,7 +9,7 @@ module.exports = {
         SUPERADMIN: "superadmin",
         ADMIN: "admin",
         ACCOUNTANT: "accountant",
-        INVENTORY_MANAGER: "inventory_manager",
+        INVENTORY_MANAGER: "inventory",
     }
 
 }

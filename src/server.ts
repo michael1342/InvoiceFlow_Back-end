@@ -9,6 +9,15 @@ const inventoryRoutes = require("./routes/inventory.routes");
 const dotenv = require('dotenv').config();
 const cookies = require('cookie-parser');
 const { PRODUCT_STATUS } = require('./config/constants');
+const cors = require('cors');
+
+const allowedOrigins = ['http://localhost:5173' , 'http://localhost:5174' , 'http://localhost:5175' , 'http://localhost:5176' , 'http://localhost:5177' , 'http://localhost:5178' , 'http://localhost:5179'];
+
+app.use(cors({
+    origin: 'http://localhost:5173',
+    headers: ['Content-Type', 'Authorization'],
+    credentials: true
+}));
 
 app.use(cookies());
 
@@ -20,16 +29,6 @@ app.use('/api/payment', PaymentRoute);
 app.use('/api/teams', superAdmin);
 app.use('/api/inventory', inventoryRoutes);
 
-const getProductStatus = (quantity: number) => {
-    if(quantity === 0) {
-        return PRODUCT_STATUS.OUT_OF_STOCK
-    } 
-    if(quantity <= 30) {
-        return PRODUCT_STATUS.LOW_STOCK
-    }
-    return PRODUCT_STATUS.IN_STOCK
-}
-console.log(getProductStatus(0)); // Output: "out_of_stock"
 
 // app.use('/api/customers', customerRoutes);
 // app.use(`/:${id}`, customerRoutes);
