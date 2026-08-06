@@ -10,6 +10,11 @@ const BusinessSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
     email: {
         type: String,
         required: true
@@ -68,7 +73,7 @@ const BusinessSchema = new mongoose.Schema({
     passwordChangedAt: Date,
     passwordResetToken: String,
     passwordResetExpires: Date
-},{timestamps: true})
+},{timestamps: true}, {_id: false})
 
 
  BusinessSchema.pre('save', async function(this: any): Promise<void> {
@@ -88,7 +93,7 @@ BusinessSchema.methods.changedPasswordAfter = function (jwtTimestamp: number) {
 } 
 
 BusinessSchema.set('toJSON', {
-    transform: (_: any, ret: any) => {delete ret.password; return ret;},
+    transform: (_: any, ret: any) => {delete ret.password; return ret;}, 
 })
 
 

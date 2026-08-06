@@ -3,5 +3,15 @@ export interface RegisterBody {
   email: string;
   password: string;
   role?: string;
-  businessName: string
+  companyName: string
+}
+
+export interface Product {
+    sku: string,
+    name: string,
+    businessID: string,
+    category: string,
+    unitCost: number,
+    unitPrice: number,
+    quantity: number
 }

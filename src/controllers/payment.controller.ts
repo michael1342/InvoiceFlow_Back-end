@@ -58,10 +58,6 @@ exports.createTransaction = async (req: any, res: Response, next: NextFunction) 
         );
         if (paystackData.data.status === "success") {
             user.subscriptionStatus = true
-
-        
-            
-            
             superAdmin.wallet.balance += transaction.amount
 
             user.subscriptionPlan = transaction.subscriptionPlan

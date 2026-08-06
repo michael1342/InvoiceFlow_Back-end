@@ -46,3 +46,12 @@ exports.addUser = async (req: any, res: Response, next: NextFunction): Promise<v
     }
 }
 
+exports.showBusinessStaff = async (req: any, res: Response, next: NextFunction): Promise<void> => {
+    try {
+        const staff = await TeamManagementService.showBusinessStaff(req)
+        res.status(200).json({ staff });
+    } catch (err) {
+        next(err)
+    }
+}
+
